@@ -3,6 +3,12 @@ name = "spekt"
 version = "0.1.0"
 authors = ["Alex Pearson <alex@alexpear.com>"]
 edition = "2018"
+repository = "https://github.com/NAlexPear/spekt"
+homepage = "https://github.com/NAlexPear/spekt"
+license = "MIT"
+readme = "README.md"
+description = "std::future::Future and Result-based testing trait for managing the lifecycle of stateful, asynchronous tests"
+keywords = ["testing", "async", "futures"]
 
 [dependencies]
 async-trait = "0.1.37"
