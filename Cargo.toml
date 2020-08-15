@@ -1,0 +1,11 @@
+[package]
+name = "spekt"
+version = "0.1.0"
+authors = ["Alex Pearson <alex@alexpear.com>"]
+edition = "2018"
+
+[dependencies]
+async-trait = "0.1.37"
+
+[dev-dependencies]
+anyhow = "1"
