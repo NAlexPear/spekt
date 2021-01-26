@@ -56,7 +56,7 @@ but no reliable destructor trait has yet materialized for `async` functions.
 [might be unpredictable across runtimes](https://github.com/tokio-rs/tokio/issues/2002).
 This is, specifically, an [issue in tests](https://github.com/tokio-rs/tokio/issues/2699) for which there is no good universal solution.
 4. In addition, while `new` and `Drop` make sense for resources, those conventions make less sense for the more abstract idea of a "Test".
-In most testing frameworks, the idea of a "test" is the combination of a some stateful test context initialized `before` the actual test,
+In most testing frameworks, the idea of a "test" is the combination of some stateful test context initialized `before` the actual test,
 a test case that can mutate its own context, and some clean-up to be run `after` the actual test.
 
 `spekt` avoids all of these issues by providing a `Test` trait
