@@ -5,7 +5,7 @@ use std::{future::Future, sync::Arc};
 #[async_trait]
 pub trait Test
 where
-    Self: Sized + Send + Sync + 'static,
+    Self: Sized + Send + Sync,
 {
     /// The format-able error shared by each step. anyhow::Error is recommended!
     type Error: std::fmt::Display + Send + Sync;
@@ -31,7 +31,7 @@ where
             Ok(state) => Arc::new(state),
         };
 
-        let test_run = task(state.clone()).await;
+        let test_run = task(Arc::clone(&state)).await;
         let after = state.after().await;
 
         if let Err(error) = test_run {
